@@ -7,8 +7,10 @@
 -->
 
 <Clients xmlns:xi="http://www.w3.org/2001/XInclude">
-	<!--
 	<xi:include href="upstreamclients.xml"/>
-	-->
-	<xi:include href="localclients.xml"/>
+	<Client name="client1" profile="default"/>
+	<Client name="client2" profile="default"/>
+	<Client name="client3" profile="default"/>
+	<Client name="client4" profile="default"/>
+	<Client name="bcfg1" profile="default"/>
 </Clients>

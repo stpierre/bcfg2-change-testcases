@@ -2,5 +2,6 @@
 	<xi:include href="distros.xml"/>
 	<!-- Basic profile -->
 	<Group profile='true' name='basic' category='profiles'>
-	</Group>
+    <Bundle name="bcfg2"/>
+  </Group>
 </Groups>

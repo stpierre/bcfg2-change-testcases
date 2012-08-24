@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "---"
+echo "classes:"
+echo "  foo:"
+echo "parameters:"
+echo "  param: true"

@@ -1,0 +1,6 @@
+<Rules priority="0">
+  <Group name="bcfg2-server">
+    <Service name="bcfg2-server" type="chkconfig" status="on"/>
+  </Group>
+  <Path name="/var/lib/bcfg2/Packages/cache" type="directory" owner="root" group="root" perms="0755"/>
+</Rules>

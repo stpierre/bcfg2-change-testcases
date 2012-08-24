@@ -1,0 +1,8 @@
+<Defaults priority="0">
+  <Group name="rhel">
+    <Service name=".*" type="chkconfig"/>
+  </Group>
+  <Group name="fedora">
+    <Service name=".*" type="systemd"/>
+  </Group>
+</Defaults>

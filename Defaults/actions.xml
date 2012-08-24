@@ -1,0 +1,3 @@
+<Defaults priority="0">
+  <Action timing="post" when="modified" status="check"/>
+</Defaults>

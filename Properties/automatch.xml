@@ -1,0 +1,12 @@
+<Properties automatch="true">
+  <Group name="bcfg2-server">
+    <Arbitrary data="here"/>
+  </Group>
+  <More arbitrary="data"/>
+  <Nested>
+    <Tags as="well"/>
+  </Nested>
+  <Client name="client1">
+    <Client arbitrary="data"/>
+  </Client>
+</Properties>

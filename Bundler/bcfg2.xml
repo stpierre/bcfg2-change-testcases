@@ -1,0 +1,7 @@
+<Bundle name="bcfg2">
+  <Path name="/etc/bcfg2.conf"/>
+  <Path name="/etc/bcfg2.crt"/>
+  <BoundPath name="/var/cache/bcfg2" type="directory" owner="root" group="root" perms="0700" />
+  <Package name="bcfg2"/>
+  <BoundService name="bcfg2" status="on"/>
+</Bundle>

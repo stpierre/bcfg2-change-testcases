@@ -1,0 +1,14 @@
+<GroupPatterns>
+  <GroupPattern>
+    <NamePattern>client\d+</NamePattern>
+    <Group>clients</Group>
+  </GroupPattern>
+  <GroupPattern>
+    <NameRange>client[[1-3]]</NameRange>
+    <Group>firstclients</Group>
+  </GroupPattern>
+  <GroupPattern>
+    <NamePattern>bcfg\d+</NamePattern>
+    <Group>bcfg2-server</Group>
+  </GroupPattern>
+</GroupPatterns>

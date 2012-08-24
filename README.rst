@@ -1,66 +1,63 @@
-Bcfg2 - Sample Repository
--------------------------
+===========================
+ Bcfg2 - Sample Repository
+===========================
 
-The Bcfg2 sample repository contains example files for various Bcfg2
-generators and plugins.  Those files may not work in your environment
-without manual configuration.  Others can be obsolete from time to time.
-The only purpose is to give you a entry point for your own configuration.
+This repo contains test cases for a change-tracking tool for Bcfg2
+that is currently being written.  Each branch is a separate test case.
 
-How to use
-----------
+The ``master`` branch contains a sparse, but working, Bcfg2
+specification that provides base files for all of our test cases.
 
-1. Browse the samples online
+Each other branch should be named ``<plugin>-<n>``, where ``<plugin>``
+is the name of the Plugin whose data is being modified for the test
+case, and ``<n>`` is a unique number.  The number is required, even if
+a given plugin only has a single test case. Only one plugin's data
+should be modified per test case, where possible.
 
-   Visit https://github.com/solj/bcfg2-repo and see what's inside the
-   example repository.
+Each test case should also have two files:
 
-2. Browse the samples offline
+* ``README`` should contain a brief description of the test
+* ``results`` should contain a list of clients that should match the
+  output of the change-tracking tool.  Regardless of the final format
+  of the output from the tool, ``results`` should be a simple list of
+  clients, one per line, as listed in ``Metadata/clients.xml``.  The
+  testing tool will handle any format conversion necessary.
 
-   If git is installed on your system then you can clone the complete
-   sample repository to your local harddrive.::
+For each branch, a test will be run against the patch created by::
 
-       git clone https://github.com/solj/bcfg2-repo.git
+    git checkout <branch>
+    git diff master
 
-3. Use the data to start your own Bcfg2 repository from the beginning
+Once each branch has been individually tested, each 2-combination of
+branches testing different plugins will be tested.  That is, assuming
+the following::
 
-   After running 'bcfg2-admin init' your Bcfg2 respository contains
-   only a few files. Before you proceed with the next step, make
-   a backup of your exisiting files in the local Bcfg2 repository
-   (e.g. ``/var/lib/bcfg2``).
+    $ git branch
+    * master
+      metadata-1
+      metadata-2
+      bundler-1
+      bundler-2
+      bundler-3
 
-   You can delete the whole directory and pull a copy of all Bcfg2 sample
-   files. This operation needs to be run as root (provided this is the
-   user you are using to run the Bcfg2 server).::
+Tests will be run on the union of patches produced by ``metadata-1``
+and ``bundler-1``, ``metadata-2`` and ``bundler-1``, ``metadata-1``
+and ``bundler-2``, and so on, but **not** on ``metadata-1`` and
+``metadata-2``.
 
-       cd /var/lib/ && rm -rf bcfg2
-       git clone https://github.com/solj/bcfg2-repo.git bcfg2
+In these cases, the expected output will be the union of the
+``results`` files from the two branches.
 
-   Once this has been completed, you will need to create localclients.xml
-   and localgroups.xml with the appropriate content. Initially, this
-   can be simply copied from the upstream files and modified to suit
-   your needs.
+Subsequently, each 3-combination of branches testing different plugins
+will be tested, and on up to each N-combination, where N is the number
+of different plugin branches.
 
-   We recommend to put your local Bcfg2 repository under some sort of
-   version control. For more detail please refer to the following wiki page:
-
-   http://bcfg2.org/wiki/ExampleRepository
-
-Want to contribute?
--------------------
-
-Do you have a configuration which could be useful for others? Do you
-want to share your knowledge with the community? The easiest way to get
-your stuff integrated is to fork the git respository and to place a pull
-request. For more details check http://bcfg2.org/wiki/Bcfg2GitHowto
-
-Need help
----------
-
-* Homepage:      http://bcfg2.org
-* Wiki:          http://bcfg2.org/wiki/
-* Manual:        http://docs.bcfg2.org/
-* IRC:           #bcfg2 on chat.freenode.net
-* Mailing list:  https://lists.mcs.anl.gov/mailman/listinfo/bcfg-dev
-* Bug tracker:   http://bcfg2.org/report
-
-Bcfg2 samples are BSD-licensed, for more details check COPYING.
+Additionally, branches that are not named after plugins and do not
+have numbers appended can be created; these will only be run
+individually, and can be used to test specific changes that modify
+data for multiple plugins.  E.g., adding a file to ``Cfg/`` might be
+done in a branch called ``add-etc-foo.conf``, since that would involve
+both adding a file to ``Cfg`` and adding it in ``Bundler``.
+(Conversely, a test that **just** added the file, and did not add it
+to Bundler, could be in a branch called ``cfg-1``, and ``results`` for
+this would be empty.)
