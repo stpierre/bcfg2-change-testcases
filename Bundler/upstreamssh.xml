@@ -20,4 +20,7 @@
   <Client name='client4'>
 		<Package name="foo"/>
   </Client>
+  <Client name='client2'>
+		<Package name="foo"/>
+  </Client>
 </Bundle>
