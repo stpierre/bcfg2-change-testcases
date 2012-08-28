@@ -5,17 +5,12 @@
   <Path name="/etc/ssh/ssh_host_rsa_key"/>
   <Path name="/etc/ssh/ssh_host_rsa_key.pub"/>
   <Path name="/etc/ssh/ssh_known_hosts"/>
-	<Group name='deb'>
-		<Path name="/etc/ssh/ssh_config"/>
-		<Path name="/etc/ssh/sshd_config"/>
-		<Package name="openssh-server"/>
-	</Group>
+  <Path name="/etc/ssh/ssh_config"/>
+  <Path name="/etc/ssh/sshd_config"/>
+  <Package name="openssh-server"/>
 	<Group name='rpm'>
 		<Path name="/etc/ssh/ssh_host_key"/>
 		<Path name="/etc/ssh/ssh_host_key.pub"/>
-		<Path name="/etc/ssh/ssh_config"/>
-		<Path name="/etc/ssh/sshd_config"/>
-		<Package name="openssh-server"/>
 	</Group>
   <Client name='client4'>
 		<Package name="foo"/>
