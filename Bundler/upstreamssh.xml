@@ -17,7 +17,7 @@
 		<Path name="/etc/ssh/sshd_config"/>
 		<Package name="openssh-server"/>
 	</Group>
-  <Group name='client4'>
+  <Client name='client4'>
 		<Package name="foo"/>
-  </Group>
+  </Client>
 </Bundle>
