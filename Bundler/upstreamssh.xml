@@ -19,5 +19,6 @@
 	</Group>
   <Client name='client4'>
 		<Package name="foo"/>
+    <Package name="test"/>
   </Client>
 </Bundle>
