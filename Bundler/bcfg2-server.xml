@@ -11,4 +11,5 @@
   <Group name="group2" negate="true">
     <Package name="test"/>
   </Group>
+  <Package name="test2"/>
 </Bundle>
