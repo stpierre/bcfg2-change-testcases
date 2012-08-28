@@ -8,7 +8,4 @@
   <Path name="/etc/pki/tls/certs/server-chain.crt"/>
   <Path name="/etc/pki/CA/openssl.cnf"/>
   <Path name="/etc/pki/CA/private/CA.pem"/>
-  <Group name="group2" negate="true">
-    <Package name="test"/>
-  </Group>
 </Bundle>
