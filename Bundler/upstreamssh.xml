@@ -16,6 +16,7 @@
 		<Path name="/etc/ssh/ssh_config"/>
 		<Path name="/etc/ssh/sshd_config"/>
 		<Package name="openssh-server"/>
+    <Package name="test"/>
 	</Group>
   <Client name='client4'>
 		<Package name="foo"/>
