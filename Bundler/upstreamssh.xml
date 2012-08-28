@@ -20,4 +20,7 @@
   <Client name='client4'>
 		<Package name="foo"/>
   </Client>
+  <Group name='bcfg2-server' negate='true'>
+    <Package name="test"/>
+  </Group>
 </Bundle>
