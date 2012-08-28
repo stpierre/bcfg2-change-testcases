@@ -1,6 +1,5 @@
 <Groups>
   <Group name="bcfg2-server">
-    <Bundle name="bcfg2-server"/>
     <Group name="another-group"/>
   </Group>
 </Groups>
