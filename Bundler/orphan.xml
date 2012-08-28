@@ -1,0 +1,4 @@
+<Bundle name="orphan">
+  <!-- this bundle is not listed anywhere in Metadata, and should not
+       affect anything -->
+</Bundle>

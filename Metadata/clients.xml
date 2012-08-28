@@ -10,7 +10,8 @@
 	<xi:include href="upstreamclients.xml"/>
 	<Client name="client1" profile="default"/>
 	<Client name="client2" profile="default"/>
-	<Client name="client3" profile="default"/>
-	<Client name="client4" profile="default"/>
+	<Client name="client3" profile="profile2"/>
+	<Client name="client4" profile="profile2"/>
 	<Client name="bcfg1" profile="default"/>
+	<Client name="bcfg2" profile="profile2"/>
 </Clients>

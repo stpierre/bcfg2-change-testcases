@@ -4,4 +4,8 @@
   <Group name="default" default="true" profile="true" public="true">
     <Bundle name="upstreamssh"/>
   </Group>
+  <Group name="profile2" default="true" profile="true" public="true">
+    <Bundle name="upstreamssh"/>
+    <Group name="group2"/>
+  </Group>
 </Groups>
