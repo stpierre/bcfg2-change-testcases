@@ -1,1 +1,20 @@
-<Probes/>
+<Probes>
+  <Client timestamp="1346165762" name="client1">
+    <Group name="rpm"/>
+  </Client>
+  <Client timestamp="1346165762" name="client2">
+    <Group name="deb"/>
+  </Client>
+  <Client timestamp="1346165762" name="client3">
+    <Group name="deb"/>
+  </Client>
+  <Client timestamp="1346165762" name="client4">
+    <Group name="rpm"/>
+  </Client>
+  <Client timestamp="1346165762" name="bcfg1">
+    <Group name="deb"/>
+  </Client>
+  <Client timestamp="1346165762" name="bcfg2">
+    <Group name="rpm"/>
+  </Client>
+</Probes>
